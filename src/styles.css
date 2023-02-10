@@ -1,0 +1,62 @@
+:root {
+  --text-color: #6e6b7b;
+  --purple-color: #7367f0;
+  --purple-color-hover: #6355f2;
+  --facebook-color: #3b5998;
+  --facebook-hover-color: #234794;
+  --twitter-color: #00acee;
+  --twitter-hover-color: #058bbe;
+}
+.container_form {
+  color: var(--text-color);
+  padding: 0 24px;
+}
+.label_form {
+  font-size: 14px;
+}
+.link_form {
+  color: var(--purple-color);
+  text-decoration: none;
+}
+.link_form:hover {
+  color: var(--purple-color-hover);
+  text-decoration: underline;
+}
+.signUpBtn_form {
+  margin-top: 1rem;
+}
+.signUpBtn_form > button {
+  background-color: var(--purple-color);
+}
+.signUpBtn_form > button:hover {
+  background-color: var(--purple-color-hover);
+}
+.footer_form {
+  text-align: center;
+}
+.social_form {
+  max-width: 280px;
+  margin: 8px auto 0;
+  display: grid;
+  gap: 1rem;
+}
+@media (min-width: 375px) {
+  .social_form {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.social_fb {
+  background-color: var(--facebook-color);
+  border: none;
+}
+.social_fb:hover {
+  background-color: var(--facebook-hover-color);
+}
+.social_twitter {
+  background-color: var(--twitter-color);
+  border: none;
+}
+.social_twitter:hover {
+  background-color: var(--twitter-hover-color);
+}
