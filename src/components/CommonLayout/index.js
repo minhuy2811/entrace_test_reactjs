@@ -7,7 +7,7 @@ export default function CommonLayout(props) {
     <Container fluid="xs">
       <Row xs="1" md={2} style={{ height: "100vh", width: "100vw" }}>
         <Col xs={12} md={7} lg={8}>
-          <div className="bg-light">
+          <div className="bg-light h-100">
             <img
               alt="This is signup"
               src={background}
