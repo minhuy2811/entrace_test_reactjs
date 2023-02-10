@@ -1,13 +1,18 @@
 import "../../styles.css";
-
+import React from "react";
 import { Form, FormGroup, Label, Input } from "reactstrap";
+import { connect } from "react-redux";
+import { signUp } from "../../actions";
+
 import CheckBoxWithText from "../../components/CheckBoxWithText";
 import PurpleButtonSubmit from "../../components/PurpleButtonSubmit";
 import CommonLayout from "../../components/CommonLayout";
 import FooterForm from "../../components/FooterForm";
 import signup_img from "../../images/signup_img.svg";
 
-export default function SignUpPage() {
+function SignUpPage(props) {
+  const { account, onSignUp } = props;
+  console.log("account", account);
   return (
     <CommonLayout
       background={signup_img}
@@ -22,6 +27,7 @@ export default function SignUpPage() {
                 Firstname
               </Label>
               <Input
+                required
                 id="firstName"
                 name="Firstname"
                 placeholder="Enter your first name"
@@ -34,6 +40,7 @@ export default function SignUpPage() {
                 Lastname
               </Label>
               <Input
+                required
                 id="lastName"
                 name="Lastname"
                 placeholder="Enter your last name"
@@ -46,6 +53,7 @@ export default function SignUpPage() {
                 Email
               </Label>
               <Input
+                required
                 id="email"
                 name="email"
                 placeholder="Enter your email"
@@ -58,6 +66,7 @@ export default function SignUpPage() {
                 Password
               </Label>
               <Input
+                required
                 id="password"
                 name="password"
                 placeholder="Enter your password"
@@ -66,7 +75,13 @@ export default function SignUpPage() {
             </FormGroup>
             {/* Checkbox agree policy */}
             <CheckBoxWithText type="signup" />
-            <PurpleButtonSubmit name="Sign Up" />
+            <PurpleButtonSubmit
+              name="Sign Up"
+              btnProps={{
+                onClick: () => onSignUp(),
+                href: "/dashboard",
+              }}
+            />
           </Form>
           <FooterForm type="signup" />
         </div>
@@ -74,3 +89,14 @@ export default function SignUpPage() {
     />
   );
 }
+
+const mapStatetoProps = (state) => {
+  return { account: state.data, error: state.error };
+};
+
+const mapDispatchprops = (dispatch) => {
+  return {
+    onSignUp: () => dispatch(signUp()),
+  };
+};
+export default connect(mapStatetoProps, mapDispatchprops)(SignUpPage);

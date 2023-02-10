@@ -27,10 +27,12 @@ export default function DashboardPage() {
         </div>
         <Popover placement="bottom-start" isOpen={toggle} target="logout">
           <div className="p-2">
-            <span style={{ paddingRight: "8px" }}>
-              <AiOutlineLogout />
-            </span>
-            <span>Logout</span>
+            <a href="/login">
+              <span style={{ paddingRight: "8px" }}>
+                <AiOutlineLogout />
+              </span>
+              <span>Logout</span>
+            </a>
           </div>
         </Popover>
       </div>

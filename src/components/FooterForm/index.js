@@ -11,7 +11,10 @@ export default function FooterForm({ type }) {
     <div className="footer_form">
       <span>
         {firstText}?{" "}
-        <a className="link_form" href="http://www.nexlesoft.com">
+        <a
+          className="link_form"
+          href={type !== "signup" ? "/signup" : undefined}
+        >
           {secondText}
         </a>
       </span>
