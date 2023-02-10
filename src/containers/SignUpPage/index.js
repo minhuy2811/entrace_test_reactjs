@@ -10,16 +10,7 @@ import signup_img from "../../images/signup_img.svg";
 export default function SignUpPage() {
   return (
     <CommonLayout
-      background={
-        <div className="bg-light">
-          <img
-            alt="This is signup"
-            src={signup_img}
-            width="100%"
-            height="100%"
-          />
-        </div>
-      }
+      background={signup_img}
       content={
         <div className="container_form">
           <h5>Adventure starts here</h5>
