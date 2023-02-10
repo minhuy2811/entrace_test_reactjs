@@ -12,7 +12,7 @@ export default function SignUpPage() {
     <CommonLayout
       background={signup_img}
       content={
-        <div className="container_form">
+        <div className="text_form py-0 px-3">
           <h5>Adventure starts here</h5>
           <p>Make you app management easy for fun!</p>
           <Form>

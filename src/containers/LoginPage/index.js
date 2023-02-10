@@ -11,7 +11,7 @@ export default function LoginPage() {
     <CommonLayout
       background={login_img}
       content={
-        <div className="container_form">
+        <div className="text_form py-0 px-3">
           <h5>Welcome to Entrance Test Interview! 👋🏻</h5>
           <p>Please sign-in to your account and start the adventure</p>
           <Form>
